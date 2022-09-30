@@ -67,10 +67,10 @@ def main(diff_tad_file, test_tad_file, control_tad_file, out_dir, coefficient=0.
     
     # bedtools intersect
     bedtools_diff = f"{out_dir}/differential_tad_control_tad_intersect.tsv"
-    Subp_call(f"bedtools intersect -a {diff_tad_bed_file} -b {control_tad_bed_file} > {bedtools_diff}")
+    Subp_call(f"bedtools intersect -a {diff_tad_bed_file} -b {control_tad_bed_file} -wo > {bedtools_diff}")
     
     bedtools_countrol = f"{out_dir}/control_tad_differential_tad_intersect.tsv"
-    Subp_call(f"bedtools intersect -a {control_tad_bed_file} -b {diff_tad_bed_file} > {bedtools_countrol}")
+    Subp_call(f"bedtools intersect -a {control_tad_bed_file} -b {diff_tad_bed_file} -wo > {bedtools_countrol}")
     
     # overlap and location
     dict_control = {}
@@ -334,5 +334,5 @@ if __name__ == "__main__":
     test_tad_file=param_list[1]
     control_tad_file = param_list[2]
     out_dir = param_list[3]
-    coefficient = param_list[4]
+    coefficient = eval(param_list[4])
     main(diff_tad_file, test_tad_file, control_tad_file, out_dir, coefficient)
