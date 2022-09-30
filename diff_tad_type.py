@@ -324,3 +324,15 @@ def main(diff_tad_file, test_tad_file, control_tad_file, out_dir, coefficient=0.
             f.write(bou_list[0] + "," + str(bou_list[1]) + "\n")
     
     return
+
+
+import sys
+
+if __name__ == "__main__":
+    param_list = sys.argv[1:]
+    diff_tad_file=param_list[0]
+    test_tad_file=param_list[1]
+    control_tad_file = param_list[2]
+    out_dir = param_list[3]
+    coefficient = param_list[4]
+    main(diff_tad_file, test_tad_file, control_tad_file, out_dir, coefficient)
