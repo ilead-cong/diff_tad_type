@@ -24,7 +24,7 @@ bedtools: https://bedtools.readthedocs.io/en/latest/
 
 ## useage
 ```python
-python diff_tad_type.py diff_tad_file test_tad_file control_tad_file out_dir percent  
+python diff_tad_type.py diff_tad_file test_tad_file control_tad_file out_dir 0.1  
 ```
 
 ## more
